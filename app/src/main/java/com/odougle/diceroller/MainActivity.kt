@@ -21,8 +21,31 @@ class MainActivity : AppCompatActivity() {
     private fun rollingDice(){
         binding.rollButton.setOnClickListener {
             val side = firstDice.roll()
-            binding.diceSideText.text = side.toString()
+            setDiceImage(side)
             Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setDiceImage(side: Int) {
+        when(side){
+            1 -> {
+                binding.diceSideImage.setImageResource(R.drawable.dice_1)
+            }
+            2 -> {
+                binding.diceSideImage.setImageResource(R.drawable.dice_2)
+            }
+            3 -> {
+                binding.diceSideImage.setImageResource(R.drawable.dice_3)
+            }
+            4 -> {
+                binding.diceSideImage.setImageResource(R.drawable.dice_4)
+            }
+            5 -> {
+                binding.diceSideImage.setImageResource(R.drawable.dice_5)
+            }
+            6 -> {
+                binding.diceSideImage.setImageResource(R.drawable.dice_6)
+            }
         }
     }
 

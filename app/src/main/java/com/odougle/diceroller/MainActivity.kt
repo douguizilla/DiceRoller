@@ -9,8 +9,20 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
+    private val firstDice = Dice(6)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        rollingDice()
     }
+
+    private fun rollingDice(){
+        binding.rollButton.setOnClickListener {
+            val side = firstDice.roll()
+            binding.diceSideText.text = side.toString()
+        }
+    }
+
+
 }

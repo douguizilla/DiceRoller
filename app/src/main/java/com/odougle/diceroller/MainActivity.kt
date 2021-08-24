@@ -2,6 +2,7 @@ package com.odougle.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.odougle.diceroller.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding.rollButton.setOnClickListener {
             val side = firstDice.roll()
             binding.diceSideText.text = side.toString()
+            Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
         }
     }
 
